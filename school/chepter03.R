@@ -1,53 +1,53 @@
 # install packages
 install.packages("readr")
 
-# readr ÆĞÅ°Áö¸¦ ¸Ş¸ğ¸®·Î ¿Ã¸°´Ù.
+# readr íŒ¨í‚¤ì§€ë¥¼ ë©”ëª¨ë¦¬ë¡œ ì˜¬ë¦°ë‹¤.
 library(readr)
 
 
 ###############################################
 # factor
-# ¹üÁÖÇü µ¥ÀÌÅÍ¸¦ Ç¥ÇöÇÏ´Â µ¥ÀÌÅÍ ÇüÅÂ
+# ë²”ì£¼í˜• ë°ì´í„°ë¥¼ í‘œí˜„í•˜ëŠ” ë°ì´í„° í˜•íƒœ
 
 x <- factor(c("yes", "yes", "no", "yes", "no"))
 x
 
-class(x) # ¾î¶² Å¬·¡½ºÀÎÁö È®ÀÎ
+class(x) # ì–´ë–¤ í´ë˜ìŠ¤ì¸ì§€ í™•ì¸
 
 
 x <- factor(c("yes", "yes", "no", "yes", "no"), levels=c("yes", "no"))
 x
 
-table(x) # levelº°·Î °³¼ö¸¦ ¼À
+table(x) # levelë³„ë¡œ ê°œìˆ˜ë¥¼ ì…ˆ
 
 blood.type <- factor(c("A", "A", "AB", "O", "O"), levels=c("A", "B", "AB", "O"))
 blood.type
 
 ##############################################
 # data frames
-# Ç¥ÇüÅÂ·Î µÇ¾îÀÖÀ½
+# í‘œí˜•íƒœë¡œ ë˜ì–´ìˆìŒ
 
-# »ı¼º¹æ¹ı 1
+# ìƒì„±ë°©ë²• 1
 x <- data.frame(id = 1:4, name =c("kim", "lee", "park", "choi"))
 x
 
-# »ı¼º¹æ¹ı 2
+# ìƒì„±ë°©ë²• 2
 x <- c(100, 75, 80)
 y <- c("A302043", "A302044", "A302045")
 z <- data.frame(score=x, ID=y)
 z
 
-str(z) # µ¥ÀÌÅÍÇÁ·¹ÀÓ Á¤¸®
+str(z) # ë°ì´í„°í”„ë ˆì„ ì •ë¦¬
 
-data.2 <- data.frame(x=1:3, y=c('a','b','c'), stringsAsFactors = F) # ¹®ÀÚ¿­ÀÌ ¿À¸é Factor·Î ¸¸µç
+data.2 <- data.frame(x=1:3, y=c('a','b','c'), stringsAsFactors = F) # ë¬¸ìì—´ì´ ì˜¤ë©´ Factorë¡œ ë§Œë“ 
 
-# dataFrame ÇÕÄ¡±â
+# dataFrame í•©ì¹˜ê¸°
 a <- data.frame(x=c(5, 10, 15), y=c("a", "b", "c"))
 b <- data.frame(z=c(10, 20, 30))
-cbind(a, b) # µÎ ¿­À» ÇÕÄ¡±â
+cbind(a, b) # ë‘ ì—´ì„ í•©ì¹˜ê¸°
 
 a1 <- data.frame(x=c(20, 25, 30), y=c("d", "e", "f"))
-rbind(a, a1) # ÇàÀ¸·Î ÇÕÄ¡±â
+rbind(a, a1) # í–‰ìœ¼ë¡œ í•©ì¹˜ê¸°
 
 df <- rbind(a, a1)
 ######################################################
@@ -57,9 +57,9 @@ write.csv(df, file="address.csv")
 df2 <- read.csv("address.csv")
 df2
 
-View(df2) # Ç¥·Î Á÷Á¢ º¸±â
+View(df2) # í‘œë¡œ ì§ì ‘ ë³´ê¸°
 
 ######################################################
-# readr ÆĞÅ°Áö¸¦ ÀÌ¿ë, ÀÌ°ÍÀÌ´õ ºü¸§
+# readr íŒ¨í‚¤ì§€ë¥¼ ì´ìš©, ì´ê²ƒì´ë” ë¹ ë¦„
 df3 <- read_csv(file="address.csv")
 df3
